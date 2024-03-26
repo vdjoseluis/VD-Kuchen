@@ -13,6 +13,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.vdkuchen.app_vdkuchen.ui.LoginScreen
 import com.vdkuchen.app_vdkuchen.ui.MainScreen
+import com.vdkuchen.app_vdkuchen.ui.ClientDataScreen
 import com.vdkuchen.app_vdkuchen.ui.UserViewModel
 import com.vdkuchen.app_vdkuchen.ui.theme.VDKuchenTheme
 
@@ -34,7 +35,10 @@ class MainActivity : ComponentActivity() {
                             LoginScreen(navController = navController, viewModel= viewModel)
                         }
                         composable("main") {
-                            MainScreen(viewModel = viewModel)
+                            MainScreen(navController = navController, viewModel= viewModel)
+                        }
+                        composable("clientData") {
+                            ClientDataScreen(viewModel = viewModel)
                         }
                     }
                 }

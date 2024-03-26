@@ -1,5 +1,6 @@
 package com.vdkuchen.app_vdkuchen.ui
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -11,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.vdkuchen.app_vdkuchen.network.ApiClient
 import org.json.JSONObject
 
@@ -18,6 +20,7 @@ import org.json.JSONObject
 @Composable
 fun MainScreen(
     viewModel: UserViewModel,
+    navController: NavController,
     modifier: Modifier = Modifier
 ) {
     var services by remember { mutableStateOf<List<JSONObject>?>(null) }
@@ -79,7 +82,7 @@ fun MainScreen(
                 // Muestra la tabla de servicios si se han obtenido
                 services?.let { services ->
                     if (services.isNotEmpty()) {
-                        MainScreenContent(services)
+                        MainScreenContent(services, navController, viewModel)
                     } else {
                         Text(
                             text= "No tienes servicios",
@@ -101,10 +104,12 @@ fun MainScreen(
 private val BottomAppBarHeight= 40.dp
 
 @Composable
-fun MainScreenContent(services: List<JSONObject>) {
+fun MainScreenContent(services: List<JSONObject>, navController: NavController, viewModel: UserViewModel) {
     LazyColumn {
         // Registros de la tabla
         items(services) { service ->
+            val customerId = service.getInt("id_customer")
+
             Surface(
                 color = MaterialTheme.colorScheme.secondary, // Color de fondo diferente
                 modifier = Modifier.fillMaxWidth()
@@ -114,7 +119,12 @@ fun MainScreenContent(services: List<JSONObject>) {
                     TableCell(formatTime(service.getString("time")))
                 }
             }
-            Row {
+            Row (
+                modifier = Modifier.clickable {
+                    viewModel.selectedCustomerId.value = customerId
+                    navController.navigate("clientData")
+                }
+            ) {
                 TableCell(formatFullName(service.getString("customer_name"), service.getString("customer_surname")))
                 TableCell(service.getString("customer_city"))
             }
@@ -147,8 +157,3 @@ fun formatFullName(firstName: String, lastName: String): String {
     return "$firstName $lastName"
 }
 
-@Preview(showBackground = true)
-@Composable
-fun MainScreenPreview() {
-    MainScreen(viewModel = UserViewModel())
-}
