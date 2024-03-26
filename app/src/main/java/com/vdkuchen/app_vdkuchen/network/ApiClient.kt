@@ -73,4 +73,24 @@ object ApiClient {
 
         requestQueue.add(jsonObjectRequest)
     }
+
+    fun getCustomerDetails(
+        customerId: Int,
+        successListener: (JSONObject) -> Unit,
+        errorListener: (String) -> Unit
+    ) {
+        val url = "$BASE_URL?get_customer_details&customerId=$customerId"
+
+        val jsonObjectRequest = JsonObjectRequest(
+            Request.Method.GET, url, null,
+            { response ->
+                successListener.invoke(response)
+            },
+            { error ->
+                errorListener.invoke(error.message ?: "Error desconocido")
+            }
+        )
+
+        requestQueue.add(jsonObjectRequest)
+    }
 }
