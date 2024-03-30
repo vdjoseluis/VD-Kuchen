@@ -7,4 +7,7 @@ class UserViewModel: ViewModel() {
     val userId = mutableStateOf(-1)
     val userName = mutableStateOf("")
     val selectedCustomerId = mutableStateOf<Int?>(null)
+
+    val selectedServiceId = mutableStateOf<Int?>(null)
+    val newStatus = mutableStateOf("")
 }

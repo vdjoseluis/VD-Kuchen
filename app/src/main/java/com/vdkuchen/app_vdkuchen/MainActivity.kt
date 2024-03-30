@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -38,7 +39,7 @@ class MainActivity : ComponentActivity() {
                             MainScreen(navController = navController, viewModel= viewModel)
                         }
                         composable("clientData") {
-                            ClientDataScreen(viewModel = viewModel)
+                            ClientDataScreen(context = LocalContext.current, navController = navController, viewModel= viewModel)
                         }
                     }
                 }

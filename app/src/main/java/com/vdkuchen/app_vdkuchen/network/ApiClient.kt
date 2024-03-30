@@ -76,10 +76,11 @@ object ApiClient {
 
     fun getCustomerDetails(
         customerId: Int,
+        serviceId: Int,
         successListener: (JSONObject) -> Unit,
         errorListener: (String) -> Unit
     ) {
-        val url = "$BASE_URL?get_customer_details&customerId=$customerId"
+        val url = "$BASE_URL?get_customer_details&customerId=$customerId&serviceId=$serviceId"
 
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
@@ -91,6 +92,40 @@ object ApiClient {
             }
         )
 
+        requestQueue.add(jsonObjectRequest)
+    }
+
+    fun changeStatusService(
+        installerId: Int,
+        serviceId: Int,
+        newStatus: String,
+        successListener: () -> Unit,
+        errorListener: () -> Unit
+    ) {
+        val url = "$BASE_URL?change_status_service&serviceId=$serviceId&newStatus=$newStatus&installerId=$installerId"
+
+        val jsonObjectRequest = JsonObjectRequest(
+            Request.Method.GET, url, null,
+            { successListener.invoke() },
+            { errorListener.invoke() }
+        )
+        requestQueue.add(jsonObjectRequest)
+    }
+
+    fun createIncident(
+        userId: Int,
+        customerId: Int,
+        description: String,
+        successListener: () -> Unit,
+        errorListener: () -> Unit
+    ) {
+        val url = "$BASE_URL?createIncident&userId=$userId&customerId=$customerId&description=$description"
+
+        val jsonObjectRequest = JsonObjectRequest(
+            Request.Method.GET, url, null,
+            { successListener.invoke() },
+            { errorListener.invoke() }
+        )
         requestQueue.add(jsonObjectRequest)
     }
 }
