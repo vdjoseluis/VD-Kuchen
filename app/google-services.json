@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "385243904358",
+    "firebase_url": "https://vdkuchen-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "vdkuchen",
+    "storage_bucket": "vdkuchen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:385243904358:android:37509b7ed95eeb6c4ab0a7",
+        "android_client_info": {
+          "package_name": "com.vdkuchen.app_vdkuchen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "385243904358-pe4pbdlr852718dfhs660fsgfh76j2ug.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vdkuchen.app_vdkuchen",
+            "certificate_hash": "447d2a18dc665d0642fe0f827967ec6cec510795"
+          }
+        },
+        {
+          "client_id": "385243904358-am0jn69r6glicmnfb9kucc345s3qjanp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp0h8D7hFfHO37LcOJm1ztu5YtSyK0Zs8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "385243904358-am0jn69r6glicmnfb9kucc345s3qjanp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

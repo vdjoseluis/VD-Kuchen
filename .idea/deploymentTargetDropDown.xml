@@ -2,19 +2,16 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="ConfirmationDialogPreview">
+      <entry key="DefaultPreview">
         <State />
       </entry>
-      <entry key="IncidentDialogPreview">
-        <State />
-      </entry>
-      <entry key="LoginActivity">
+      <entry key="FileAttachmentDialogPreview">
         <State />
       </entry>
       <entry key="MainActivity">
         <State />
       </entry>
-      <entry key="PreviewCustomAlertDialog">
+      <entry key="SelectDateDialogPreview">
         <State />
       </entry>
       <entry key="app">
