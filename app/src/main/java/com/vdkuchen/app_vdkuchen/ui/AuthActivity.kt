@@ -52,7 +52,7 @@ fun AuthActivity (
     val db = FirebaseFirestore.getInstance()
 
     if (viewModel.userId.value=="") {
-        Image(painter = painterResource(id = R.drawable.logo1),
+        Image(painter = painterResource(id = R.drawable.logovdkuchen),
             contentDescription = "Logo", modifier = Modifier.alpha(0.2f))
         Column(
             modifier= Modifier

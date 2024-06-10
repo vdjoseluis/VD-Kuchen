@@ -42,7 +42,7 @@ fun SplashScreen(navController: NavController) {
     Box(contentAlignment = Alignment.Center,
         modifier = Modifier.fillMaxSize().background(Color.DarkGray)) {
         // Change the logo
-        Image(painter = painterResource(id = R.drawable.logo1vdkuchen),
+        Image(painter = painterResource(id = R.drawable.logovdkuchen),
             contentDescription = "Logo",
             modifier = Modifier.scale(scale.value))
     }

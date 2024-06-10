@@ -257,7 +257,7 @@ fun ClientDataActivity(
             color = Color.LightGray,
             modifier = Modifier.fillMaxSize()
         ) {
-            Image(painter = painterResource(id = R.drawable.logo1),
+            Image(painter = painterResource(id = R.drawable.logovdkuchen),
                 contentDescription = "Logo", modifier = Modifier.alpha(0.1f))
             LazyColumn(
                 modifier = Modifier

@@ -121,7 +121,7 @@ fun MyContent(viewModel: UserViewModel, navController: NavController){
         mDatePickerDialog.show()
     }
 
-    Image(painter = painterResource(id = R.drawable.logo1),
+    Image(painter = painterResource(id = R.drawable.logovdkuchen),
         contentDescription = "Logo", modifier = Modifier.alpha(0.2f))
     Column(modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
